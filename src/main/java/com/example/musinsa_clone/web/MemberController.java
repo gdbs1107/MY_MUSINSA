@@ -18,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberController {
 
     //회원가입
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "0001",description = "회원가입 요청",
+            content = @Content(schema = @Schema(implementation = MemberJoinDTO.JoinRequestDTO.class)))
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200",description = "회원가입 응답",
+            content = @Content(schema = @Schema(implementation = MemberJoinDTO.JoinResponseDTO.class)))
     @PostMapping("/join")
-    public ApiResponse<String> join(@RequestBody MemberJoinDTO.JoinRequestDTO request) {
-        return ApiResponse.onSuccess("success");
-
+    public void join(@RequestBody MemberJoinDTO.JoinRequestDTO request) {
     }
 
     //회원정보 수정
