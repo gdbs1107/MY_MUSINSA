@@ -5,7 +5,9 @@ import lombok.Getter;
 
 public class SizeRequest {
 
+
     @Getter
+    @Schema(description = "상의 사이즈 입력을 위한 DTO")
     public static class TopSizeRequest{
 
         @Schema(
