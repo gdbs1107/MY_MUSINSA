@@ -1,12 +1,16 @@
 package com.example.musinsa_clone.web;
 
 import com.example.musinsa_clone.api.ApiResponse;
+import com.example.musinsa_clone.test.web.dto.SizeRequest;
 import com.example.musinsa_clone.web.dto.MemberJoinDTO;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequiredArgsConstructor
