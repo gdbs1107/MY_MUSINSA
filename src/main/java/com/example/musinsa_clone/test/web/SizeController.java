@@ -3,6 +3,9 @@ package com.example.musinsa_clone.test.web;
 import com.example.musinsa_clone.test.service.SizeService;
 import com.example.musinsa_clone.test.testEntity.Product;
 import com.example.musinsa_clone.test.web.dto.SizeRequest;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +19,8 @@ public class SizeController {
     private final SizeService sizeService;
 
     // 상의 사이즈 추가
+    @ApiResponse(responseCode = "0000",description = "상의 사이즈 등록 DTO",
+            content = @Content(schema = @Schema(implementation = SizeRequest.TopSizeRequest.class)))
     @PostMapping("/top/{productId}")
     public ResponseEntity<Product> addTopSize(@PathVariable Long productId, @RequestBody SizeRequest.TopSizeRequest topSizeRequest) {
         Product product = sizeService.addTopSize(productId, topSizeRequest);
