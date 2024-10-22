@@ -24,7 +24,10 @@ public class MemberController {
     public void join(@RequestBody MemberJoinDTO.JoinRequestDTO request) {
     }
 
+
     //회원정보 수정
+    @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200",description = "회원가입 응답",
+            content = @Content(schema = @Schema(implementation = MemberJoinDTO.JoinResponseDTO.class)))
     @PutMapping("/")
     public void updateUser(@RequestBody MemberUpdateDTO.MemberUpdateRequestDTO request){
 
