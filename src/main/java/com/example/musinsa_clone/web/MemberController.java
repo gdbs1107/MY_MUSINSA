@@ -31,6 +31,7 @@ public class MemberController {
 
     }
 
+    // 회원 비밀번호 수정
     //회원탈퇴
 
     //회원조회
